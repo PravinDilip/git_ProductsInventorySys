@@ -1,7 +1,23 @@
 {
-    "users": [
-      { "id": 1, "name": "John Doe", "email": "john@example.com" },
-      { "id": 2, "name": "Jane Doe", "email": "jane@example.com" }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": "cd9d",
+      "productName": "P1",
+      "photo": "C:\\fakepath\\1000247244.jpg",
+      "category": "1",
+      "price": 20,
+      "stockStatus": "Yes",
+      "supplier": "S1",
+      "sku": "SKU1",
+      "description": "Lorem",
+      "manufactureDate": "2024-11-07",
+      "expiryDate": "2024-11-08",
+      "weight": 500,
+      "dimension": "5'8",
+      "color": "Green",
+      "material": "Soft",
+      "warranty": "5",
+      "location": "Pune"
+    }
+  ]
+}
