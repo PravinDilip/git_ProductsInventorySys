@@ -1,1 +1,372 @@
-<p>new-product works!</p>
+<div class="card">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="card-header bg-body-secondary">Add New Product</div>
+    <div class="card-body">
+      <fieldset>
+        <div class="row">
+          <div class="col-4 mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input
+              type="text"
+              name="productName"
+              id="productName"
+              class="form-control"
+              formControlName="productName"
+              aria-describedby="Product Name"
+              [ngClass]="{
+                'is-invalid':
+                  submitted &&
+                  f['productName'].touched &&
+                  f['productName'].errors
+              }"
+            />
+            @if (f['productName'].errors) {
+            <div class="invalid-feedback">
+              @if (f['productName'].errors['required'] &&
+              f['productName'].touched) { Enter Product Name}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="photo" class="form-label">Photo</label>
+            <input
+              type="file"
+              name="photo"
+              id="photo"
+              class="form-control"
+              formControlName="photo"
+              aria-describedby="Photo"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['photo'].touched && f['photo'].errors
+              }"
+            />
+            @if (f['photo'].errors) {
+            <div class="invalid-feedback">
+              @if (f['photo'].errors['required'] && f['photo'].touched) { Enter
+              Photo}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Category" class="form-label">Category</label>
+            <select
+              class="form-select"
+              aria-label="Category"
+              formControlName="category"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['category'].errors && f['category'].touched
+              }"
+            >
+              <option value="">Select</option>
+              @for (item of categoryList; track $index) {
+              <option value="item">{{ item }}</option>
+              }
+            </select>
+            @if (f['category'].errors) {
+            <div class="invalid-feedback">
+              @if (f['category'].errors['required'] && f['category'].touched) {
+              Enter Category}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Price" class="form-label">Price</label>
+            <input
+              type="number"
+              name="Price"
+              id="Price"
+              class="form-control"
+              formControlName="price"
+              aria-describedby="Price"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['price'].errors && f['price'].touched
+              }"
+            />
+            @if (f['price'].errors) {
+            <div class="invalid-feedback">
+              @if (f['price'].errors['required'] && f['price'].touched) { Enter
+              Price}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="stockStatus" class="form-label">Stock Status</label>
+            <div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="stockStatus"
+                  id="inlineRadio1"
+                  value="Yes"
+                  formControlName="stockStatus"
+                />
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="stockStatus"
+                  id="inlineRadio2"
+                  value="No"
+                  formControlName="stockStatus"
+                />
+                <label class="form-check-label" for="inlineRadio2">No</label>
+              </div>
+              @if (f['stockStatus'].errors) {
+              <div class="invalid-feedback">
+                @if (f['stockStatus'].errors['required'] &&
+                f['stockStatus'].touched) { Enter Stock Status}
+              </div>
+              }
+            </div>
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Supplier" class="form-label">Supplier</label>
+            <input
+              type="text"
+              name="Supplier"
+              id="Supplier"
+              class="form-control"
+              formControlName="supplier"
+              aria-describedby="Supplier"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['supplier'].errors && f['supplier'].touched
+              }"
+            />
+            @if (f['supplier'].errors) {
+            <div class="invalid-feedback">
+              @if (f['supplier'].errors['required'] && f['supplier'].touched) {
+              Enter Supplier}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="SKU" class="form-label">SKU</label>
+            <input
+              type="text"
+              name="SKU"
+              id="SKU"
+              class="form-control"
+              formControlName="sku"
+              aria-describedby="SKU"
+              [ngClass]="{
+                'is-invalid': submitted && f['sku'].errors && f['sku'].touched
+              }"
+            />
+            @if (f['sku'].errors) {
+            <div class="invalid-feedback">
+              @if (f['sku'].errors['required'] && f['sku'].touched) { Enter SKU}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Description" class="form-label">Description</label>
+            <input
+              type="text"
+              name="Description"
+              id="Description"
+              class="form-control"
+              formControlName="description"
+              aria-describedby="Description"
+              [ngClass]="{
+                'is-invalid':
+                  submitted &&
+                  f['description'].errors &&
+                  f['description'].touched
+              }"
+            />
+            @if (f['description'].errors) {
+            <div class="invalid-feedback">
+              @if (f['description'].errors['required'] &&
+              f['description'].touched) { Enter Description}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="ManufactureDate" class="form-label"
+              >Manufacture Date</label
+            >
+            <input
+              type="date"
+              name="Manufacture Date"
+              id="Manufacture Date"
+              class="form-control"
+              formControlName="manufactureDate"
+              aria-describedby="ManufactureDate"
+              [ngClass]="{
+                'is-invalid':
+                  submitted &&
+                  f['manufactureDate'].errors &&
+                  f['manufactureDate'].touched
+              }"
+            />
+            @if (f['manufactureDate'].errors) {
+            <div class="invalid-feedback">
+              @if (f['manufactureDate'].errors['required'] &&
+              f['manufactureDate'].touched) { Enter Manufacture Date}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="ExpiryDate" class="form-label">Expiry Date</label>
+            <input
+              type="date"
+              name="Expiry Date"
+              id="Expiry Date"
+              class="form-control"
+              formControlName="expiryDate"
+              aria-describedby="ExpiryDate"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['expiryDate'].errors && f['expiryDate'].touched
+              }"
+            />
+            @if (f['expiryDate'].errors) {
+            <div class="invalid-feedback">
+              @if (f['expiryDate'].errors['required'] &&
+              f['expiryDate'].touched) { Enter Expiry Date}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Weight" class="form-label">Weight</label>
+            <input
+              type="number"
+              name="Weight"
+              id="Weight"
+              class="form-control"
+              formControlName="weight"
+              aria-describedby="Weight"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['weight'].errors && f['weight'].touched
+              }"
+            />
+            @if (f['weight'].errors) {
+            <div class="invalid-feedback">
+              @if (f['weight'].errors['required'] && f['weight'].errors) { Enter
+              Weight}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Dimensions" class="form-label">Dimensions</label>
+            <input
+              type="text"
+              name="Dimensions"
+              id="Dimensions"
+              class="form-control"
+              formControlName="dimension"
+              aria-describedby="Dimensions"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['dimension'].errors && f['dimension'].touched
+              }"
+            />
+            @if (f['dimension'].errors) {
+            <div class="invalid-feedback">
+              @if (f['dimension'].errors['required'] && f['dimension'].touched)
+              { Enter Dimensions}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Color" class="form-label">Color</label>
+            <input
+              type="text"
+              name="Color"
+              id="Color"
+              class="form-control"
+              formControlName="color"
+              aria-describedby="Color"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['color'].errors && f['color'].touched
+              }"
+            />
+            @if (f['color'].errors) {
+            <div class="invalid-feedback">
+              @if (f['color'].errors['required'] && f['color'].touched) { Enter
+              Color}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Material" class="form-label">Material</label>
+            <input
+              type="text"
+              name="Material"
+              id="Material"
+              class="form-control"
+              formControlName="material"
+              aria-describedby="Material"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['material'].errors && f['material'].touched
+              }"
+            />
+            @if (f['material'].errors) {
+            <div class="invalid-feedback">
+              @if (f['material'].errors['required'] && f['material'].touched) {
+              Enter Material}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Warranty" class="form-label">Warranty</label>
+            <input
+              type="text"
+              name="Warranty"
+              id="Warranty"
+              class="form-control"
+              formControlName="warranty"
+              aria-describedby="Warranty"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['warranty'].errors && f['warranty'].touched
+              }"
+            />
+            @if (f['warranty'].errors) {
+            <div class="invalid-feedback">
+              @if (f['warranty'].errors['required'] && f['warranty'].touched) {
+              Enter Warranty}
+            </div>
+            }
+          </div>
+          <div class="col-4 mb-3">
+            <label for="Location" class="form-label">Location</label>
+            <input
+              type="text"
+              name="Location"
+              id="Location"
+              class="form-control"
+              formControlName="location"
+              aria-describedby="Location"
+              [ngClass]="{
+                'is-invalid':
+                  submitted && f['location'].errors && f['location'].touched
+              }"
+            />
+            @if (f['location'].errors) {
+            <div class="invalid-feedback">
+              @if (f['location'].errors['required'] && f['location'].touched) {
+              Enter Location}
+            </div>
+            }
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="card-footer">
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
