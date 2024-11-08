@@ -8,49 +8,48 @@ import { error, log } from 'console';
   providedIn: 'root',
 })
 export class ProductServiceService {
- private productUrl = 'http://localhost:3000/products';
- httpOptions = {
-
-  headers: new HttpHeaders({
-
-    'Content-Type': 'application/json'
-
-  })
-
-}
+  private productUrl = 'http://localhost:3000/products';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
   constructor(private http: HttpClient) {}
 
   public addProduct(product: Product): Observable<Product[]> {
-    return this.http.post<Product[]>(this.productUrl, product,this.httpOptions);
+    return this.http.post<Product[]>(
+      this.productUrl,
+      product,
+      this.httpOptions
+    );
   }
-  
- public getAllProducts():Observable<Product[]>{
-    return this.http.get<Product[]>(this.productUrl).pipe(
-      catchError(this.errorHandler)
-    );
+  public getAllProducts(): Observable<Product[]> {
+    return this.http
+      .get<Product[]>(this.productUrl)
+      .pipe(catchError(this.errorHandler));
+  }
+  public getSingleProduct(productid: string): Observable<Product> {
+    return this.http
+      .get<Product>(`${this.productUrl}/${productid}`)
+      .pipe(catchError(this.errorHandler));
+  }
+  public updateProduct(productid: string, data: Product) {
+    return this.http
+      .put<Product>(`${this.productUrl}/${productid}`, data, this.httpOptions)
+      .pipe(catchError(this.errorHandler));
+  }
+  public deleteProduct(productid: number) {
+    return this.http
+      .delete(`${this.productUrl}/${productid}`, this.httpOptions)
+      .pipe(catchError(this.errorHandler));
+  }
+  errorHandler(error: any) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-  public deleteProduct(productid:number){
-    return this.http.delete(this.productUrl +productid,this.httpOptions).pipe(
-      catchError(this.errorHandler)
-    );
-  }  
-
-
-    errorHandler(error:any) {
-
-      let errorMessage = '';
-  
-      if(error.error instanceof ErrorEvent) {
-  
-        errorMessage = error.error.message;
-  
-      } else {
-  
-        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-  
-      }
-  
-      return throwError(errorMessage);
-  
-   }
+    return throwError(errorMessage);
+  }
 }
