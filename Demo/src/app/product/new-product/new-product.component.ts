@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ProductServiceService } from '../../service/product-service.service';
+import { Product } from '../../product';
 @Component({
   selector: 'app-new-product',
   standalone: true,
@@ -17,7 +18,7 @@ import { ProductServiceService } from '../../service/product-service.service';
 export class NewProductComponent implements OnInit {
   productForm!: FormGroup;
   submitted: boolean = false;
-  productData: [] = [];
+  productData: Product[] = [];
   categoryList: string[] = [];
   service = inject(ProductServiceService);
   constructor(private fb: FormBuilder) {}
