@@ -1,100 +1,75 @@
-<div class="card-header bg-body-secondary">Product List</div>
-<div class="card-body">
- 
-   <div class="table-responsive">
-    <table class="table mt-4 table-striped table-bordered">
+<div class="card">
+  <div class="card-header bg-body-secondary">Product List</div>
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
         <thead>
-            <tr>
-            <th>
-                Product Name
-            </th>
-            <th>
-                Category
-            </th>
-            <th>
-                Price
-            </th>
-            <th>
-                Stock Status
-            </th>
-            <th>
-                Supplier
-            </th>
-            <th>
-                SKU
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Manufacture Date
-            </th>
-            <th>
-                Expiry Date
-            </th>
-            <th>
-                Weight
-            </th>
-            <th>
-                Dimensions
-            </th>
-            <th>
-                Color
-            </th>
-            <th>
-                Material
-                
-            </th>
-            <th>
-                Warranty
-            </th>
-            <th>
-                Location
-            </th>
-            <th>
-                Action
-            </th>
-           
-            </tr>
+          <tr>
+            <th>Product Name</th>
+            <th>Photo</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock Status</th>
+            <th>Supplier</th>
+            <th>SKU</th>
+            <th>Description</th>
+            <th>Manufacture Date</th>
+            <th>Expiry Date</th>
+            <th>Weight</th>
+            <th>Dimensions</th>
+            <th>Color</th>
+            <th>Material</th>
+            <th>Warranty</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of productDetailsList">
-                <td>{{item.productName}}</td>
-                <td> <img class='center-block img-responsive' 
-                    [style.width.px]='200' 
-                    [style.margin.px]='2' 
-                    [src]='item.photo'
-                    [title]='item.productName'></td>
-                <td>{{item.category}}</td>
-                <td>{{item.price}}</td>
-                <td>{{item.stockStatus}}</td>
-                <td>{{item.sku}}</td>
-                <td>{{item.description}}</td>
-                <td>{{item.manufactureDate}}</td>
-                <td>{{item.expiryDate}}</td>
-                <td>{{item.weight}}</td>
-                <td>{{item.dimension}}</td>
-                <td>{{item.color}}</td>
-                <td>{{item.material}}</td>
-                <td>{{item.warranty}}</td>
-                <td>{{item.location}}</td>
+          <tr *ngFor="let item of productDetailsList">
+            <td>{{ item.productName }}</td>
+            <td>
+              <img
+                class="center-block img-responsive"
+                [style.width.px]="200"
+                [style.margin.px]="2"
+                [src]="item.photo"
+                [title]="item.productName"
+              />
+            </td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.stockStatus }}</td>
+            <td>{{ item.supplier }}</td>
+            <td>{{ item.sku }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.manufactureDate }}</td>
+            <td>{{ item.expiryDate }}</td>
+            <td>{{ item.weight }}</td>
+            <td>{{ item.dimension }}</td>
+            <td>{{ item.color }}</td>
+            <td>{{ item.material }}</td>
+            <td>{{ item.warranty }}</td>
+            <td>{{ item.location }}</td>
 
-                  
-                   <td>
-                    <a href="#"  class="btn btn-primary">Edit</a>
-  
-                    <button type="button" (click)="deleteProduct(item.id)" class="btn btn-danger">Delete</button>
-  
-                  </td>
-
-            </tr>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="updateProduct(item.id)"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                (click)="deleteProduct(item.id)"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
         </tbody>
-    </table>
+      </table>
     </div>
- 
-</div>
-<div class="card-footer">
-  <div class="col-12">
-  
   </div>
 </div>

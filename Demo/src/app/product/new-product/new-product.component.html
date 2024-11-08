@@ -27,7 +27,7 @@
             </div>
             }
           </div>
-          <div class="col-4 mb-3">
+          <!-- <div class="col-4 mb-3">
             <label for="photo" class="form-label">Photo</label>
             <input
               type="file"
@@ -47,7 +47,7 @@
               Photo}
             </div>
             }
-          </div>
+          </div> -->
           <div class="col-4 mb-3">
             <label for="Category" class="form-label">Category</label>
             <select
@@ -61,7 +61,7 @@
             >
               <option value="">Select</option>
               @for (item of categoryList; track $index) {
-              <option value="item">{{ item }}</option>
+              <option [value]="item">{{ item }}</option>
               }
             </select>
             @if (f['category'].errors) {
