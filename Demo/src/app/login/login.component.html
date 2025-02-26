@@ -1,0 +1,22 @@
+<p>login works!</p>
+<mat-card appearance="outlined">
+    <mat-card-header style="width: auto !important;padding-left: 140px;">
+        AirRock
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]=loginform (ngSubmit)="onSave(loginform)">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input name="username" type="text" formControlName="username" matInput>
+              </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input name="password" type="text" formControlName="password" matInput>
+            </mat-form-field>
+            <div class="example-button-row">
+                <button style="margin:auto;width: 45%;padding-left: 90px;" type="submit" mat-button>Login</button><br>
+                <button style="width: 80%;"mat-button>Login With Google</button>   
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
