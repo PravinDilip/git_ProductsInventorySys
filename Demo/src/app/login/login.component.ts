@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { FormArray,FormBuilder,FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ import { FormArray,FormBuilder,FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit{
 
   loginform:any;
-  constructor(public formBuilder:FormBuilder){}
+  constructor(public formBuilder:FormBuilder,private routes:Router){}
 
   ngOnInit(): void {
     this.loginform =this.formBuilder.group({
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit{
 
   onSave(values:any){
     console.log('data',values);
+    this.routes.navigate(['flights'])
   }
 
 }
