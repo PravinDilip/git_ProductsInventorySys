@@ -1,0 +1,57 @@
+.flexbox-container{
+    margin-top:20px !important;
+    display: flex;
+    border: 2px solid grey;
+    border-radius: 20px;
+    justify-content: center;
+    width: 500px;
+}
+.example-card {
+    max-width:100%;
+    margin:10px;
+}
+.example-card-footer{
+  margin-left: 10px;
+}
+.Chihuahua_traits{
+ cursor: pointer !important;
+}
+.flexbox-container-outer{
+    margin-top:20px !important;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.flexbox-item1{
+    flex-wrap: wrap;
+    flex-basis: 45%;
+    text-wrap: wrap;
+    overflow:auto;
+    word-wrap: break-word !important;
+
+}
+.flexbox-item2{
+    flex-wrap: wrap;
+    flex-basis: 200px;
+}
+@media screen and (max-width: 790px) {
+    .flexbox-container{
+        margin-top: 90px;
+        width: 300px;
+    }
+    .flexbox-item1{
+        flex-basis: 200px;
+        word-wrap: break-word;
+    }
+    .flexbox-item2{
+        flex-basis: 200px;
+    }
+  }
+
+.example-margin{
+    width: auto;
+}
+
+@media screen and (max-width){
+
+}
