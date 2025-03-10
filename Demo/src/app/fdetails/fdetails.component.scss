@@ -22,6 +22,42 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+section {
+    display: table;
+  }
+
+  .info{
+    margin: 10px;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px;
+    border: 1px solid grey;
+  }
+  .flextinfo{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap:10px;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+
+
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+
+  
 .flexbox-item1{
     flex-wrap: wrap;
     flex-basis: 45%;

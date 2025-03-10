@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<style>
+ .frame{
+    position: relative;
+    outline: 2px dotted grey;
+    top:90%;
+    left: 50%;
+    height: 500px;
+    width: 300px;
+    transform: translate(-50%,-50%);
+    background-color: orange;
+ }
+ .center{
+    position: relative;
+    top:65%;
+    left: 50%;
+    background-color: grey;
+    transform: translate(-50%,-50%);
+    border: 1px solid grey;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+ }
+ .sky{
+    z-index:1;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: skyblue;
+    width: 100%;
+    height: 75%;
+ }
+ .py_left{
+    position: absolute;
+    top: 100px; 
+    left: 38px;
+    height: 0px;
+    width: 0px;
+    border-bottom: 50px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    z-index: 2;
+ }
+ .sun{
+    position: absolute;
+    top:0px;
+    z-index: 2;
+    left: 20px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: yellow;
+ }
+</style>
+</head> 
+
+<body> 
+ <div class="frame">
+    <p>dddddd</p>
+    <div class="center">
+        <div class="outer_circle">
+            <div class="sky"></div>
+            <div class="sun"></div>
+            <div class="py_left"></div>
+            <div class="py_right"></div>
+            <div class="shadow"></div>
+            <div class="sand"></div>
+        </div>
+    </div>
+ </div>
+</body> 
+
+</html>

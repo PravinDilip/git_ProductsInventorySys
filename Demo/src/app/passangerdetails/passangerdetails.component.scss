@@ -1,0 +1,25 @@
+ 
+ .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+
+  .flex-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  mat-card{
+   top:40%; 
+   margin:auto;
+   width: 30%;
+   border:2px solid grey;
+}
+
+mat-card-content{
+    margin: auto;
+    width:70%;
+}

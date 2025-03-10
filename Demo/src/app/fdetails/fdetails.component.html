@@ -10,21 +10,24 @@
     </mat-card-title>
     </mat-card-header>
   </mat-card>
-
 <div class="flexbox-container-outer">
     <div class="flexbox-item1">
-        <p style="margin-left: 10px; font-size: large;">Passanger list</p>
-        <mat-list role="list">
-            <mat-list-item role="listitem">Item 1 kkkkffffffffffffffffffkkkkkkkkkkkkkkkkkkkkkkkkkk
-                xdfdsdssddddddddddd asdssdsdsdseatno:122323</mat-list-item>
-            <mat-list-item role="listitem">Item 2 kkkkkkkk<a style="cursor: pointer; color:blue">seatno:122323</a>ggggggggggggggggkkkkkkkkkkkkkkkkkkk</mat-list-item>
-            <mat-list-item role="listitem">Item 3 kkkksssssssss<a style="cursor: pointer; color:blue">seatno:122323</a>ssssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkk</mat-list-item>
-            <mat-list-item role="listitem">Item 1 kkkkfffffffffffffff<a style="cursor: pointer; color:blue">seatno:122323</a>kkkkkkkkkkkkkkkkkkkk</mat-list-item>
-            <mat-list-item role="listitem">Item 2 kkkkkkkkkggggggggg<a style="cursor: pointer; color:blue">seatno:122323</a>ggggkkkkkkkkkkkkkkkkkkk</mat-list-item>
-            <mat-list-item role="listitem">Item 3 kkkkss<a style="cursor: pointer; color:blue">seatno:122323</a>sssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkk</mat-list-item>
-            <mat-list-item role="listitem">Item 1 kkkkffffffffffffff<a style="cursor: pointer; color:blue">seatno:122323</a>kkkkkkkkkkkk</mat-list-item>
-            <mat-list-item role="listitem">Item 2 kkkkkkkkkggg<a style="cursor: pointer; color:blue">seatno:122323</a>ggggkkkkkkkkkkkkkkkkkkk</mat-list-item>
-            <mat-list-item role="listitem">Item 3 kkkks<a style="cursor: pointer; color:blue">seatno:122323</a>ssssssssssssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkk</mat-list-item>
+        <p style="cursor: pointer; margin-left: 10px; font-size: large;">Passanger list</p>
+        <section class="flextinfo">
+          <div class="info">checkIn</div>
+          <div class="info">checkOut</div>        
+          <div class="info">WithFanta</div>
+        </section>
+        <mat-list style="cursor: pointer !important" role="list">
+            <mat-list-item role="listitem" (click)="ondetails()">Item 1 datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a></mat-list-item>
+            <mat-list-item role="listitem">Item 2 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>ggggggggggggggggkkkkkkkkkkkkkkkkkkk</mat-list-item>
+            <mat-list-item role="listitem">Item 3 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>ssssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkk</mat-list-item>
+            <mat-list-item role="listitem">Item 1 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>kkkkkkkkkkkkkkkkkkkk</mat-list-item>
+            <mat-list-item role="listitem">Item 2 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>ggggkkkkkkkkkkkkkkkkkkk</mat-list-item>
+            <mat-list-item role="listitem">Item 3 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>sssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkk</mat-list-item>
+            <mat-list-item role="listitem">Item 1 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>kkkkkkkkkkkk</mat-list-item>
+            <mat-list-item role="listitem">Item 2 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>ggggkkkkkkkkkkkkkkkkkkk</mat-list-item>
+            <mat-list-item role="listitem">Item 3 1datadatadatadatadatadatadatadatadatadatadata<a style="cursor: pointer; color:blue">seatno:122323</a>ssssssssssssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkk</mat-list-item>
           </mat-list>
     </div>
     <div class="flexbox-item2">
@@ -61,9 +64,9 @@
             </div>
         </form>
         <br>
-        <a>Check-in</a> BABYICON <br>
-        <a>Check-out</a> BABYICON <br>
-        <a>Passanger with infanta</a> <img stype="width:100px;height:100px" src="./infanta.jpg"> <br>
-        <a> passengers requiring wheel chair </a> BABYICON
+        <a>Check-out : </a><mat-checkbox ></mat-checkbox>
+        <a>Check-in : </a><mat-checkbox [ngModelOptions]="{standalone: true}" class="example-margin" [(ngModel)]="indeterminate"></mat-checkbox>
+        <a>Passanger with infanta : 'B'</a>
+        <a> passengers requiring wheel chair : 'WC' </a> 
     </div>
 </div>
